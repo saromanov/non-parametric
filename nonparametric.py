@@ -11,8 +11,17 @@ class Dataset:
         self._dataset = dataset
     
     def mean(self):
+        """ return mean from dataset
+        """
         return np.mean(self._dataset)
     
+    def __len__(self):
+        """ returns length of array
+        """
+        return np.shape
+    
     def std(self):
+        """ return standard deviation of the dataset
+        """
         return np.std(self._dataset)
     
