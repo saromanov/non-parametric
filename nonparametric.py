@@ -1,6 +1,6 @@
 from numpy.random import seed, randn
 import numpy as np
-from scipy.stats import mannwhitneyu
+from scipy.stats import mannwhitneyu, rankdata
 
 
 class Dataset:
@@ -33,5 +33,12 @@ def mann_whitney_u(ds1, ds2, alpha=0.05):
         raise Exception("input data not is Dataset type")
     stat, p = mannwhitneyu(data1, data2)
     return True if p > alpha else False
+
+
+def rank(ds):
+    """rank of numerical dataset
+    """
+    return rankdata(ds)
+
     
     
