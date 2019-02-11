@@ -33,7 +33,7 @@ def create_package_list(base_package):
 
 setup_info = dict(
     # Metadata
-    name='pyglet',
+    name='nonparametric',
     version=VERSION,
     author='Sergey Romanov',
     author_email='xxsmotur@gmail.com',
@@ -58,3 +58,5 @@ setup_info = dict(
         'Topic :: Software Development :: Libraries :: Python Modules',
     ],
 )
+
+setup(**setup_info)
