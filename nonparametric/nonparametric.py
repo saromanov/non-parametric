@@ -49,7 +49,7 @@ def wilcoxon_sgned_rank(ds1, ds2, alpha=0.05):
 def rank(ds):
     """rank of numerical dataset
     """
-    if no isinstance(ds):
+    if not isinstance(ds):
         raise Exception("input data is not Dataset type")
     return rankdata(ds.dataset)
 
@@ -58,7 +58,7 @@ def kolmogorov_smirnov(ds, cdf='norm', n=20, alpha=0.05):
     one-dimensional probability distributions that can be used 
     to compare a sample with a reference probability distribution
     """
-    if no isinstance(ds):
+    if not isinstance(ds):
         raise Exception("input data is not Dataset type")
     stat, p := stats.kstest(ds.dataset, cdf, n=n)
     return True if p > alpha else False
