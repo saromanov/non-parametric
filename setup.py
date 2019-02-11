@@ -17,30 +17,17 @@ long_description = '''implementation of some algorithms from nonparametric stati
 excluded = []
 reqs = [str(ir.req) for ir in install_reqs]
 
-def exclude_package(pkg):
-    for exclude in excluded:
-        if pkg.startswith(exclude):
-            return True
-    return False
-
-def create_package_list(base_package):
-    return ([base_package] +
-            [base_package + '.' + pkg
-             for pkg
-             in find_packages(base_package)
-             if not exclude_package(pkg)])
-
-
 setup_info = dict(
     # Metadata
     name='nonparametric',
     version=VERSION,
     author='Sergey Romanov',
     author_email='xxsmotur@gmail.com',
-    description='Cross-platform windowing and multimedia library',
+    description='implementation of some algorithms from nonparametric statistics',
     long_description=long_description,
     install_requires=reqs,
     license='MIT',
+    packages=['nonparametric'],
     classifiers=[
         'Development Status :: 5 - Production/Stable',
         'Environment :: MacOS X',
