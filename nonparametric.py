@@ -1,6 +1,6 @@
 from numpy.random import seed, randn
 import numpy as np
-from scipy.stats import mannwhitneyu, rankdata
+from scipy.stats import mannwhitneyu, rankdata, wilcoxon
 
 
 class Dataset:
@@ -32,6 +32,17 @@ def mann_whitney_u(ds1, ds2, alpha=0.05):
     if not isinstance(ds1, Dataset) or not isinstance(ds2, Dataset):
         raise Exception("input data not is Dataset type")
     stat, p = mannwhitneyu(data1, data2)
+    return True if p > alpha else False
+
+def wilcoxon_sgned_rank(ds1, ds2, alpha=0.05):
+    """ is a non-parametric statistical hypothesis test used to compare two 
+    related samples, matched samples, or repeated measurements on a single 
+    sample to assess whether their population mean ranks differ 
+    (i.e. it is a paired difference test).
+    """
+    if not isinstance(ds1, Dataset) or not isinstance(ds2, Dataset):
+        raise Exception("input data not is Dataset type")
+    stat, p = wilcoxon(data1, data2)
     return True if p > alpha else False
 
 
