@@ -31,7 +31,7 @@ def mann_whitney_u(ds1, ds2, alpha=0.05):
     """
     if not isinstance(ds1, Dataset) or not isinstance(ds2, Dataset):
         raise Exception("input data not is Dataset type")
-    stat, p = mannwhitneyu(data1, data2)
+    stat, p = mannwhitneyu(data1.dataset, data2.dataset)
     return True if p > alpha else False
 
 def wilcoxon_sgned_rank(ds1, ds2, alpha=0.05):
@@ -42,7 +42,7 @@ def wilcoxon_sgned_rank(ds1, ds2, alpha=0.05):
     """
     if not isinstance(ds1, Dataset) or not isinstance(ds2, Dataset):
         raise Exception("input data not is Dataset type")
-    stat, p = wilcoxon(data1, data2)
+    stat, p = wilcoxon(data1.dataset, data2.dataset)
     return True if p > alpha else False
 
 
@@ -51,7 +51,7 @@ def rank(ds):
     """
     if no isinstance(ds):
         raise Exception("input data is not Dataset type")
-    return rankdata(ds)
+    return rankdata(ds.dataset)
 
 def kolmogorov_smirnov(ds, cdf='norm', n=20, alpha=0.05):
     """is a nonparametric test of the equality of continuous, 
@@ -60,7 +60,7 @@ def kolmogorov_smirnov(ds, cdf='norm', n=20, alpha=0.05):
     """
     if no isinstance(ds):
         raise Exception("input data is not Dataset type")
-    stat, p := stats.kstest(x, cdf, n=n)
+    stat, p := stats.kstest(ds.dataset, cdf, n=n)
     return True if p > alpha else False
 
     
