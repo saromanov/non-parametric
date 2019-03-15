@@ -20,6 +20,12 @@ class Dataset:
         """
         return np.shape
     
+    def sum(self):
+        """ returns sum of the array
+        of all elements
+        """
+        return self.dataset.sum()
+    
     def std(self):
         """ return standard deviation of the dataset
         """
