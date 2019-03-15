@@ -18,7 +18,7 @@ class Dataset:
     def __len__(self):
         """ returns length of array
         """
-        return np.shape
+        return self.self.shape
     
     def sum(self):
         """ returns sum of the array

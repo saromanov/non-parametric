@@ -1,5 +1,5 @@
 # non-parametric
-Implementation of non-parametric tests
+Implementation of [non-parametric](https://en.wikipedia.org/wiki/Nonparametric_statistics) tests
 
 ### Install
 ```pip install nonparametric```
